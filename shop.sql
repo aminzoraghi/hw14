@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 09, 2023 at 03:50 PM
+-- Generation Time: Aug 09, 2023 at 06:26 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,8 @@ CREATE TABLE `branches` (
 INSERT INTO `branches` (`id`, `name`, `founded_at`, `city`) VALUES
 (1, 'Tehran', 2000, 'Tehran'),
 (2, 'Isfahan', 2005, 'Isfahan'),
-(3, 'Mashhad', 2010, 'Mashhad');
+(3, 'Mashhad', 2010, 'Mashhad'),
+(4, 'Tabriz', 2014, 'tabriz');
 
 -- --------------------------------------------------------
 
@@ -149,7 +150,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `branches`
 --
 ALTER TABLE `branches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `departments`
