@@ -44,6 +44,14 @@ FROM
  JOIN branches b 
  ON temp.branch_id =b.id;
 
+S2:
+SELECT e.name AS employee_name,b.name AS branch_name
+FROM employees e
+JOIN departments d
+ON e.department_id=d.id
+JOIN branches b
+ON d.branch_id=b.id;
+
 7)
 SELECT b.name AS branch_name , AVG(temp.salary) AS average_salary
 FROM
@@ -55,6 +63,16 @@ FROM
  ON temp.branch_id =b.id
  GROUP BY b.name
  HAVING(b.name='Isfahan');
+S2:
+
+SELECT AVG(e.salary) AS average_salary,b.name AS branch_name
+FROM employees e
+JOIN departments d
+ON e.department_id=d.id
+JOIN branches b
+ON d.branch_id=b.id
+GROUP by b.name
+HAVING b.name='Isfahan';
 
 
 8)
@@ -68,6 +86,10 @@ FROM
  JOIN branches b 
  ON temp.branch_id =b.id
  GROUP BY b.name;
+
+S2:
+
+SELECT COUNT(e.name) AS employee_name,b.name AS branch_name FROM employees e RIGHT JOIN departments d ON e.department_id=d.id RIGHT JOIN branches b ON d.branch_id=b.id GROUP by b.id;
 
 9)
 
@@ -95,6 +117,11 @@ FROM
  GROUP BY temp.dep_name
  HAVING(b.name='Isfahan');
 
+S3:
+SELECT COUNT(e.name) AS employee_number,d.name AS depart_name FROM employees e RIGHT JOIN departments d ON e.department_id=d.id  RIGHT JOIN branches b ON d.branch_id=b.id WHERE b.name='Isfahan' GROUP by d.id;
+
+
+
 10)
 
 SELECT b.name AS branch_name , COUNT(temp.name) AS employee_number
@@ -107,6 +134,11 @@ FROM
  ON temp.branch_id =b.id
  GROUP BY b.name
  HAVING(COUNT(temp.name) <10);
+ 
+S2:
+
+SELECT COUNT(e.name) AS employee_number,b.name AS branch_name FROM employees e RIGHT JOIN departments d ON e.department_id=d.id RIGHT JOIN branches b ON d.branch_id=b.id GROUP by b.id HAVING employee_number<10;
+
 
 
 
